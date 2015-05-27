@@ -10,7 +10,6 @@ var redis = require('redis');
  * @param int Port of Disque server
  */
 var Worker = function Worker(name, ip, port){
-
   if(!(this instanceof Worker)){
     return new Worker(name, ip, port);
   }
@@ -47,12 +46,9 @@ var Worker = function Worker(name, ip, port){
  * @param int timeout
  */
 Worker.prototype.addJob = function (queue, payload, timeout) {
-  var _this = this;
-
-  this.client.send_command("ADDJOB", [queue, payload, timeout], function (err, res) {
-        console.log(err);
-        console.log(res);
-    });
+    var _this = this;
+    this.client.send_command("ADDJOB", [queue, payload, timeout], function (err, res) {
+  });
 }
 
 /**
@@ -60,15 +56,20 @@ Worker.prototype.addJob = function (queue, payload, timeout) {
  *
  * @param string queue name
  * @param int job count
+ * @param function Callback function to execute when there is a new job
  */
 Worker.prototype.getJob = function (queue, count, callback) {
   var _this = this;
 
-  this.client.send_command("GETJOB", [ "FROM", queue], function (err, res) {
-        console.log(err);
-        console.log(res);
-        callback(res);
-        _this.getJob(queue, count, callback);
+  _this.client.send_command("GETJOB", [ "FROM", queue], function (err, res) {
+    if(typeof res[0][1] != 'undefined'){
+      //Warn Disque that we are performing job
+      _this.client.send_command("FASTACK", [res[0][1]]);
+      //Callback for the job
+      callback(res);
+      //Requeue when job is done
+      _this.getJob(queue, count, callback);
+    }
   });
 }
 
