@@ -1,4 +1,4 @@
-'use strict';
+/*jshint strict:false */
 
 var redis = require('redis');
 
@@ -28,10 +28,10 @@ var Worker = function Worker(name, ip, port){
 
       var client = redis.createClient(disquePort, disqueIp);
       client.on("connect", function () {
-          console.log("Connected to Disque on "+disqueIp+":"+disquePort)
+        console.log("Connected to Disque on " + disqueIp + ":" + disquePort);
       });
       client.on("error", function (err) {
-          console.log("Connection error: "+err.message);
+        console.log("Connection error: "+err.message);
       });
       return client;
   }
@@ -48,8 +48,8 @@ var Worker = function Worker(name, ip, port){
 Worker.prototype.addJob = function (queue, payload, timeout) {
     var _this = this;
     this.client.send_command("ADDJOB", [queue, payload, timeout], function (err, res) {
-  });
-}
+    });
+};
 
 /**
  * Adding job to queue
@@ -71,6 +71,6 @@ Worker.prototype.getJob = function (queue, count, callback) {
       _this.getJob(queue, count, callback);
     }
   });
-}
+};
 
 module.exports = Worker;
