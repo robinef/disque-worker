@@ -1,0 +1,30 @@
+{
+  "name": "disque-worker",
+  "version": "0.0.1",
+  "description": "NodeJS Disque worker",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "redis": "~0.12.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/robinef/disque-worker.git"
+  },
+  "keywords": [
+    "NodeJS",
+    "Disque",
+    "Worker"
+  ],
+  "author": "Frederic ROBINET <robinef@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/robinef/disque-worker/issues"
+  }
+}
