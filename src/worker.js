@@ -61,13 +61,14 @@ Worker.prototype.addJob = function (queue, payload, timeout) {
  * @param string queue name
  * @param int job count
  */
-Worker.prototype.getJob = function (queue, count) {
+Worker.prototype.getJob = function (queue, count, callback) {
   var _this = this;
 
   this.client.send_command("GETJOB", [ "FROM", queue], function (err, res) {
         console.log(err);
         console.log(res);
-        _this.getJob(queue, count);
+        callback(res);
+        _this.getJob(queue, count, callback);
   });
 }
 
