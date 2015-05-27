@@ -67,7 +67,8 @@ Worker.prototype.getJob = function (queue, count) {
   this.client.send_command("GETJOB", [ "FROM", queue], function (err, res) {
         console.log(err);
         console.log(res);
-    });
+        _this.getJob(queue, count);
+  });
 }
 
 module.exports = Worker;
