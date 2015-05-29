@@ -6,7 +6,7 @@ var Worker = require('../');
 var test = new Worker('test', '127.0.0.1', 7711);
 
 //Send massive job to worker
-for (var i = 0; i < 1; i++) {
-    test.addJob('queue', Date.now() , 1, function(){console.log('Job added !')});
+for (var i = 0; i < 2; i++) {
+    test.addJob('test_queue', Date.now() , 1, function(){console.log('Job added !')});
 }
 test.stop();
