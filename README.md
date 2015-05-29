@@ -46,7 +46,13 @@ Then you can start pushing some new job in the queue and watch the worker execut
 nodejs example/bench.js
 ``
 
+## Coming next
 
-## NOTES
+* Support unix socket connection
+* Support cluster connection
+* Add stats module
+
+
+## Notes
 
 On May 29th 2015 Disque is still in beta mode so you can expect bugs/issues. Feel free to help by joining the [project](https://github.com/antirez/disque)
