@@ -1,3 +1,5 @@
+[![Coverage Status](https://coveralls.io/repos/robinef/disque-worker/badge.svg)](https://coveralls.io/r/robinef/disque-worker)
+
 # disque-worker
 
 ## Introduction
