@@ -5,11 +5,13 @@
   "main": "index.js",
   "directories": {
     "test": "Testing scripts",
-    "example" : "Some example",
-    "lib" : "Source code"
+    "example": "Some example",
+    "lib": "Source code"
   },
   "dependencies": {
-    "redis": "~0.12.1"
+    "redis": "~0.12.1",
+    "coveralls": "~2.11.2",
+    "mocha-lcov-reporter": "0.0.2"
   },
   "devDependencies": {
     "chai": "~2.3.0",
