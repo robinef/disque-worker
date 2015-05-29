@@ -2,7 +2,7 @@
 
 ## Introduction
 
-disque-worker is a small nodeJS worker system using the new Disque project (made by `@antirez` the creator of Redis). It's really basic for now but working fine. It's based on node-redis client since Disque is similar to Redis in terms of connectivity and command execution.
+disque-worker is a small Node.js worker system using the new Disque project (made by `@antirez` the creator of Redis). It's really basic for now but working fine. It's based on node-redis client since Disque is similar to Redis in terms of connectivity and command execution.
 
 ## Requirement
 
