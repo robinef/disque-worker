@@ -1,4 +1,4 @@
-# Disque worker
+# disque-worker
 
 ## Introduction
 
