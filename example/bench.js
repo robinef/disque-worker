@@ -6,8 +6,8 @@ var Worker = require('../');
 var client = new Worker('test', '127.0.0.1', 7711);
 
 //Callback when job is successfuly added
-function callback(){
-    console.log('Job added !');
+function callback() {
+  console.log('Job added !');
 }
 
 //Send massive job to worker
