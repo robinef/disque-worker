@@ -19,7 +19,9 @@
     "jscs": "~1.13.1"
   },
   "scripts": {
-    "test": "mocha"
+    "pretest": "jshint lib/ && jscs lib/",     
+    "test": "mocha",
+    "coverage" : "jscover lib lib-cov; JSCOV=1 mocha -R mocha-lcov-reporter > coverage/coverage_temp.lcov; sed 's,SF:,SF:lib/,' coverage/coverage_temp.lcov > coverage/coverage.lcov"
   },
   "repository": {
     "type": "git",

@@ -1,1 +1,1 @@
-module.exports = require('./lib/worker');
+module.exports = process.env.JSCOV ? require('./lib-cov/worker') : require('./lib/worker');
