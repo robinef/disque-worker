@@ -22,7 +22,7 @@
   "scripts": {
     "pretest": "jshint lib/ && jscs lib/",
     "test": "mocha",
-    "coverage": "node_modules/.bin/jscover lib lib-cov; JSCOV=1 mocha -R mocha-lcov-reporter > coverage/coverage_temp.lcov; sed 's,SF:,SF:lib/,' coverage/coverage_temp.lcov > coverage/coverage.lcov"
+    "coverage": "mkidir coverage; node_modules/.bin/jscover lib lib-cov; JSCOV=1 mocha -R mocha-lcov-reporter > coverage/coverage_temp.lcov; sed 's,SF:,SF:lib/,' coverage/coverage_temp.lcov > coverage/coverage.lcov"
   },
   "repository": {
     "type": "git",
