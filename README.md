@@ -1,3 +1,4 @@
+[![Build status](https://travis-ci.org/robinef/disque-worker.svg?branch=master)][https://travis-ci.org/robinef/disque-worker]
 [![Coverage Status](https://coveralls.io/repos/robinef/disque-worker/badge.svg)](https://coveralls.io/r/robinef/disque-worker)
 
 # disque-worker
