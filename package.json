@@ -15,9 +15,10 @@
   },
   "devDependencies": {
     "chai": "~2.3.0",
-    "mocha": "~2.2.5",
+    "jscover": "~1.0.0",
     "jscs": "~1.13.1",
-    "jscover": "~1.0.0"
+    "jshint": "^2.8.0",
+    "mocha": "~2.2.5"
   },
   "scripts": {
     "pretest": "jshint lib/ && jscs lib/",
