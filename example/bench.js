@@ -11,8 +11,15 @@ function callback() {
 }
 
 //Send massive job to worker
-for (var i = 0; i < 2; i++) {
-  client.addJob('test_queue', Date.now() , 1).then(callback);
+for (var i = 0; i < 5; i++) {
+  client.addJob('test_queue', Date.now() , 1, 3)
+  .then(function(res){
+    console.log(res);
+    callback(res);
+  })
+  .error(function(err){
+    console.log(err);
+  });
 }
 //Close connection
 client.stop();
