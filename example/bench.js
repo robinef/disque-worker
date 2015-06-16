@@ -12,7 +12,7 @@ function callback() {
 
 //Send massive job to worker
 for (var i = 0; i < 2; i++) {
-  client.addJob('test_queue', Date.now() , 1, callback);
+  client.addJob('test_queue', Date.now() , 1).then(callback);
 }
 //Close connection
 client.stop();

@@ -9,6 +9,11 @@ var worker = new Worker('test', '127.0.0.1', 7711);
 function callback(res) {
   console.log('Hi from callback');
   console.log(res);
+  worker.getJob('test_queue', 1).then(function(res){
+    callback(res);
+  });
 }
 //Waiting for a job on queue and execute callback
-worker.getJob('test_queue', 1, callback);
+worker.getJob('test_queue', 1).then(function(res){
+  callback(res);
+});

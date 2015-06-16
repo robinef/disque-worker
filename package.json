@@ -9,15 +9,17 @@
     "lib": "Source code"
   },
   "dependencies": {
-    "redis": "~0.12.1",
+    "bluebird": "^2.9.30",
     "coveralls": "~2.11.2",
-    "mocha-lcov-reporter": "0.0.2"
+    "mocha-lcov-reporter": "0.0.2",
+    "redis": "~0.12.1"
   },
   "devDependencies": {
     "chai": "~2.3.0",
     "jscover": "~1.0.0",
     "jscs": "~1.13.1",
     "jshint": "^2.8.0",
+    "mitm": "^1.1.0",
     "mocha": "~2.2.5"
   },
   "scripts": {

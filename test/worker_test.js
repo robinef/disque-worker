@@ -1,22 +1,31 @@
 var chai = require('chai')
 var Worker = require('../');
+var Mitm = require("mitm")
+var mitm = Mitm()
 
 chai.should()
 
 describe('disque-worker', function(){
 
   it('should be connected', function(done){
+    mitm.on("connect", function(socket, opts) {
+
+    });
     //Connecting to Disque node
     try {
-      var worker = new Worker('test', '127.0.0.1', 6379);
+      var worker = new Worker('test', '127.0.0.1', 6479);
+
+      var client = worker.getClient();
+      client.on('connect', function(){
+        worker.client.connected.should.equal(true);
+        done();
+      });
+      console.log('NEW CLIENT');
     } catch(e){
       false.should.equal(true);
     }
-    worker.getClient().on('connect', function(){
-      worker.client.connected.should.equal(true);
-      done();
-    });
   })
+
 /*
   it('should add a job in queue', function(done){
     //Connecting to Disque node
@@ -48,4 +57,4 @@ describe('disque-worker', function(){
 
   })
 */
-})
+});
